@@ -1,0 +1,163 @@
+[
+  {
+    "@id": "dtmi:stemnetiot:MoistureController_1kc;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:stemnetiot:MoistureController_1kc:DeviceID;1",
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "description": {
+          "en": "Device identifier for the sensor."
+        },
+        "displayName": {
+          "en": "Device ID"
+        },
+        "name": "DeviceID",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:stemnetiot:MoistureController_1kc:Reboot;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "description": {
+          "en": "Command to reset the moisture sensor."
+        },
+        "displayName": {
+          "en": "Reboot"
+        },
+        "name": "Reboot"
+      },
+      {
+        "@id": "dtmi:stemnetiot:MoistureController_1kc:DeviceInfo;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Device Information"
+        },
+        "name": "DeviceInfo",
+        "schema": "dtmi:stemnetiot:DeviceInfo;1"
+      },
+      {
+        "@id": "dtmi:stemnetiot:MoistureController_1kc:Sensor;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Moisture Sensor"
+        },
+        "name": "Sensor",
+        "schema": "dtmi:stemnetiot:Sensor;1"
+      }
+    ],
+    "displayName": {
+      "en": "Moisture Controller"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:stemnetiot:DeviceInfo;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:stemnetiot:DeviceInfo:Model;1",
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Device Model"
+        },
+        "name": "Model",
+        "schema": "double",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:stemnetiot:DeviceInfo:FirmwareVersion;1",
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Firmware Version"
+        },
+        "name": "FirmwareVersion",
+        "schema": "double",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:stemnetiot:DeviceInfo:TotalStorage;1",
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Total Storage"
+        },
+        "name": "TotalStorage",
+        "schema": "double",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:stemnetiot:DeviceInfo:TotalMemory;1",
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Total Memory"
+        },
+        "name": "TotalMemory",
+        "schema": "double",
+        "writable": false
+      }
+    ],
+    "displayName": {
+      "en": "Device Information"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:stemnetiot:Sensor;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:stemnetiot:MoistureController_1kc:MoistureValue;1",
+        "@type": [
+          "Telemetry",
+          "NumberValue",
+          "Visualized",
+          "Humidity"
+        ],
+        "description": {
+          "en": "Volumetric soil moisture percentage reported by the sensors, averaged over some increment of time."
+        },
+        "displayName": {
+          "en": "Moisture Value"
+        },
+        "name": "MoistureValue",
+        "schema": "double",
+        "unit": "percent",
+        "color": "#8AD4EB",
+        "displayUnit": {
+          "en": "%"
+        },
+        "maxValue": 100,
+        "minValue": 0
+      }
+    ],
+    "displayName": {
+      "en": "Component"
+    }
+  }
+]
